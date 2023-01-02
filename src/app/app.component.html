@@ -1,5 +1,12 @@
-<<<<<<< HEAD
-<app-room></app-room>
-=======
-<h1>Hello World</h1>
->>>>>>> bdb6117406fc492366ae3bb414c55e9cd9a98a7e
+
+
+<div [ngSwitch]="role">
+<div *ngSwitchCase="'User'">
+  Welcome User
+</div><div *ngSwitchCase="'Admin'">
+  <app-room></app-room>
+</div>
+<div *ngSwitchDefault>
+<h3>You dont have any access</h3>
+</div>
+</div>

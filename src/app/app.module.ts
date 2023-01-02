@@ -3,24 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
+
 import { RoomComponent } from './room/room.component';
-=======
-import { RoomsComponent } from './rooms/rooms.component';
->>>>>>> bdb6117406fc492366ae3bb414c55e9cd9a98a7e
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RoomsListComponent } from './rooms-list/rooms-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    RoomComponent
-=======
-    RoomsComponent
->>>>>>> bdb6117406fc492366ae3bb414c55e9cd9a98a7e
+    RoomComponent,
+    RoomsListComponent
+
+
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

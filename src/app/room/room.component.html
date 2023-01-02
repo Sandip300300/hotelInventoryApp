@@ -1,36 +1,17 @@
-
 <h1>Hotal Name {{hotelName}}</h1>
 <div [hidden]="hideRoom">
   Number Of Room :
   <div [innerText]="numberOfRoom"></div>
 </div>
 
-
-<div *ngIf=" rooms.availableRooms>0">
-    Rooms List
-    <table>
-      <tr>
-        <th>Index</th>
-        <th>Room Number</th>
-        <th>Room Type</th>
-        <th>Room Price</th>
-        <th>Room Amenites</th>
-        <th>Checkin Time</th>
-
-      </tr>
-      <tr *ngFor="let room of roomlist;let i=index">
-        <td>{{i}}</td>
-        <td>{{room.roomNumber}}</td>
-        <td>{{room.roomType}}</td>
-        <td>{{room.amenities}}</td>
-        <td>{{room.price}}</td>
-
-        <td>{{room.checkinTime|date}}</td>
-
-
-      </tr>
-      </table>
+<div>
+  <button class="btn btn-primary" (click)="addRoom()">Add Room</button>
+</div>
+<div  *ngIf=" rooms.availableRooms>0">
+  {{selectedRoom|json}}
+ <app-rooms-list [rooms]="roomlist"
+ (selectedRoom)="selectRoom($event)"></app-rooms-list>
 
 </div>
 
-<button (click)="toggle()">Toggle</button>
+<button class="btn btn-info" (click)="toggle()">Toggle</button>
